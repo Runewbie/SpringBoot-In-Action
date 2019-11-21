@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/SpringBoot-In-Action.iml" filepath="$PROJECT_DIR$/.idea/SpringBoot-In-Action.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot-01-helloworld/spring-boot-01-helloworld.iml" filepath="$PROJECT_DIR$/spring-boot-01-helloworld/spring-boot-01-helloworld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-01-helloworld-quick/spring-boot-01-helloworld-quick.iml" filepath="$PROJECT_DIR$/spring-boot-01-helloworld-quick/spring-boot-01-helloworld-quick.iml" />
     </modules>
   </component>
 </project>
