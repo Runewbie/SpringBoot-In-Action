@@ -633,7 +633,7 @@ private static Map<String, List<String>> loadSpringFactories(@Nullable ClassLoad
 - `resources` 文件夹中目录结构：
   - `static`：保存所有的静态资源： js、css、 images等；
   - `templates`：保存所有的模板页面（Spring Boot 默认 jar 包使用嵌入式的 Tomcat，默认不支持 JSP 页面），可以使用模板引擎（`freemarker`、`thymeleaf`等）；
-  - `application.properties`：Spring Boot 应用的配置文件；可以修改一些默认设置
+  - `application.properties`：Spring Boot 应用的配置文件；可以修改一些默认设置，比如端口等
 
 我们在 `com.demo.spring.controller` 包下新见一个 `HelloController` 来测试一下我们新建的项目
 
@@ -669,9 +669,20 @@ public class HelloController {
 
 ### 源代码：
 
+[SpringBoot-In-Action](https://github.com/Runewbie/SpringBoot-In-Action)
+
+- [spring-boot-01-helloworld](https://github.com/Runewbie/SpringBoot-In-Action/tree/master/spring-boot-01-helloworld)
+
+- [spring-boot-01-helloworld-quick](https://github.com/Runewbie/SpringBoot-In-Action/tree/master/spring-boot-01-helloworld-quick)
+
 ## 二、Spring Boot配置
 
+
+
+
+
 ## 三、Spring Boot与日志
+
 ## 四、Spring Boot与Web开发
 ## 五、Spring Boot与Docker
 ## 六、Spring Boot自定义配置原理
