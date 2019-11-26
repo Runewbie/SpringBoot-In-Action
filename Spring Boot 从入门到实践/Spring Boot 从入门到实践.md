@@ -6,11 +6,11 @@
 
 ---
 
-## 一、Spring Boot快速入门
+# 一、Spring Boot快速入门
 
 本系列教程根据本人实际学习使用 SpringBoot2.x 过程总结整理而来。
 
-### 1、Spring Boot 简介
+## 1、Spring Boot 简介
 
 Spring Boot 用来简化 Spring 应用开发，约定大于配置，删繁就简，just run 就能创建一个独立的、产品级的应用
 
@@ -51,7 +51,7 @@ Spring Boot 用来简化 Spring 应用开发，约定大于配置，删繁就简
 
 ![1-20](./images/1-20.png)
 
-### 2、微服务
+## 2、微服务
 
 > - 2014由martin fowler提出
 > - 微服务：架构风格（服务微化）
@@ -61,21 +61,21 @@ Spring Boot 用来简化 Spring 应用开发，约定大于配置，删繁就简
 > - [详细参照微服务文档](https://martinfowler.com/articles/microservices.html#MicroservicesAndSoa)
 >
 
-#### 单体应用：
+### 单体应用：
 
 ![1-21](./images/1-21.png)
 
 
 
-#### 微服务：
+### 微服务：
 
 ![1-22](./images/1-22.png)
 
 ![1-23](./images/1-23.png)
 
-### 3、环境准备
+## 3、环境准备
 
-#### 开发环境：
+### 开发环境：
 
 > - jdk1.8：Spring Boot 推荐jdk1.7及以上；java version "1.8.0_221"
 > - maven3.x：maven 3.3以上版本；apache-maven-3.6.1
@@ -83,9 +83,9 @@ Spring Boot 用来简化 Spring 应用开发，约定大于配置，删繁就简
 > - SpringBoot 2.2.1.RELEASE：2.2.1；
 >
 
-#### 开发配置：
+### 开发配置：
 
-##### 1、MAVEN设置：
+#### 1、MAVEN设置：
 
 给 maven 的 `settings.xml` 配置文件的 `profiles` 标签添加下面的配置，设置 maven 的创建项目时的默认编译版本使用 `jdk8`
 
@@ -105,7 +105,7 @@ Spring Boot 用来简化 Spring 应用开发，约定大于配置，删繁就简
 > ```
 >
 
-##### 2、IDEA设置：
+#### 2、IDEA设置：
 
 Idea 整合 Maven：
 
@@ -113,19 +113,19 @@ Idea 整合 Maven：
 >
 > ![1-2](./images/1-2.png)
 
-### 4、创建 Spring Boot HelloWorld
+## 4、创建 Spring Boot HelloWorld
 
-#### 1、快速开始
+### 1、快速开始
 
 首先我们先创建一个统一的 maven 工程，用来管理我们之后学习中所有的项目：
 
-##### 1、新建项目
+#### 1、新建项目
 
 ![1-3](./images/1-3.png)
 
-##### 2、选择Maven项目![1-4](./images/1-4.png)
+#### 2、选择Maven项目![1-4](./images/1-4.png)
 
-##### 3、填写GroupId、ArtifactId
+#### 3、填写GroupId、ArtifactId
 
 GroupId：`com.demo.springboot`
 
@@ -133,11 +133,11 @@ ArtifactId：`SpringBoot-In-Action`
 
 ##### ![1-5](./images/1-5.png)
 
-##### 5、填写项目名和项目路径![1-6](./images/1-6.png)
+#### 5、填写项目名和项目路径![1-6](./images/1-6.png)
 
-##### 6、创建一个空的maven项目完成，选择允许自动导入![1-7](./images/1-7.png)
+#### 6、创建一个空的maven项目完成，选择允许自动导入![1-7](./images/1-7.png)
 
-##### 7、删除多余的目录
+#### 7、删除多余的目录
 
 只保留一个pom.xml文件即可，同时在pom文件中添加springboot依赖和打包类型
 
@@ -154,11 +154,11 @@ ArtifactId：`SpringBoot-In-Action`
 
 ![1-8](./images/1-8.png)
 
-#### 2、现在开始我们的 Spring Boot HelloWorld 项目：
+### 2、现在开始我们的 Spring Boot HelloWorld 项目：
 
 `一个功能：浏览器发送hello请求，服务器接受请求并处理，响应Hello World字符串`；
 
-##### 1、创建一个maven工程；（jar）
+#### 1、创建一个maven工程；（jar）
 
 在SpringBoot-In-Action项目中新建一个module,选择maven工程，命名为 spring-boot-01-helloworld
 
@@ -166,7 +166,7 @@ ArtifactId：`SpringBoot-In-Action`
 
 
 
-##### 2、导入spring boot相关的依赖
+#### 2、导入spring boot相关的依赖
 
 因为springboot的依赖已经在父pom中导入
 
@@ -215,7 +215,7 @@ ArtifactId：`SpringBoot-In-Action`
 </project>
 ```
 
-##### 3、编写一个主程序；启动Spring Boot应用
+#### 3、编写一个主程序；启动Spring Boot应用
 
 ![1-10](./images/1-10.png)
 
@@ -232,7 +232,7 @@ public class HelloWorldMainApplication {
 }
 ```
 
-##### 4、编写相关的Controller、Service
+#### 4、编写相关的Controller、Service
 
 为了演示，我在这里只创建了 `Controller` 类，省略了 Service
 
@@ -248,7 +248,7 @@ public class HelloController {
 }
 ```
 
-##### 5、运行主程序测试效果
+#### 5、运行主程序测试效果
 
 选中 `HelloWorldMainApplication` 右键单击选择 `Run ...` ，或者打开 `HelloWorldMainApplication` 按下快捷键 `Ctrl+Shift+F10` 运行程序，可以看到项目在 `8080` 端口启动：
 
@@ -260,7 +260,7 @@ public class HelloController {
 
 至此，我们的第一个 Spring Boot 项目算是创建完了。
 
-##### 6、补充：简化部署
+#### 6、补充：简化部署
 
 在当前项目，即 `spring-boot-01-helloworld` 的 `pom` 文件中添加下面的配置
 
@@ -292,11 +292,11 @@ public class HelloController {
 
 其他目录 `META-INF` 存放项目的 `pom` 文件，`org` 目录下存放的是 `springframework` 相关代码。
 
-### 5、Hello World 探究
+## 5、Hello World 探究
 
-#### 1、POM文件
+### 1、POM文件
 
-##### 1、父项目
+#### 1、父项目
 
 依赖路径入下图所示：
 
@@ -371,7 +371,7 @@ public class HelloController {
 
 以后我们导入其他依赖默认是不需要写版本；（当然没有在dependencies里面管理的依赖自然需要声明版本号）
 
-##### 2、导入的其他依赖
+#### 2、导入的其他依赖
 
 ```xml
 <dependency>
@@ -396,7 +396,7 @@ Spring Boot 为我们提供了简化企业级开发的绝大多数场景的 star
 
 Spring Boot 将所有的功能场景都抽取出来，做成一个个的 starters（启动器），只需要在项目里面引入这些starter 相关场景的所有依赖都会导入进来。要用什么功能就导入什么场景的启动器。而我们一般的开发也是围绕着这些 starter 来展开。
 
-#### 2、主程序类（主入口类）
+### 2、主程序类（主入口类）
 
 ```java
 /**
@@ -413,7 +413,7 @@ public class HelloWorldMainApplication {
 }
 ```
 
-##### 1、@SpringBootApplication
+#### 1、@SpringBootApplication
 
 @**SpringBootApplication**:    `Spring Boot应用`标注在某个类上说明这个类是SpringBoot的主配置类，SpringBoot 就运行这个类的 `main` 方法来启动 SpringBoot 应用；
 
@@ -438,7 +438,7 @@ public class HelloWorldMainApplication {
 public @interface SpringBootApplication {
 ```
 
-##### 2、@SpringBootConfiguration
+#### 2、@SpringBootConfiguration
 
 @**SpringBootConfiguration**：Spring Boot 的配置类；
 
@@ -460,7 +460,7 @@ public @interface SpringBootConfiguration {
 public @interface Configuration {
 ```
 
-##### 3、@EnableAutoConfiguration
+#### 3、@EnableAutoConfiguration
 
 @**EnableAutoConfiguration**：开启自动配置功能
 
@@ -605,9 +605,9 @@ private static Map<String, List<String>> loadSpringFactories(@Nullable ClassLoad
 
 ![自动配置解决方案](./images/1-27.png)
 
-### 6、使用 Spring Initializer 快速创建 Spring Boot项目
+## 6、使用 Spring Initializer 快速创建 Spring Boot项目
 
-#### 1、IDEA：使用 Spring Initializer快速创建项目
+### 1、IDEA：使用 Spring Initializer快速创建项目
 
 所有的 IDE 都支持使用 Spring 的项目创建向导快速创建一个 Spring Boot 项目，下面我们来看一下如何在 idea 中快速创建一个 Spring Boot 项目。
 
@@ -659,7 +659,7 @@ public class HelloController {
 
 ![1-33](./images/1-33.png)
 
-#### 2、通过浏览器访问https://start.spring.io/快速创建项目
+### 2、通过浏览器访问https://start.spring.io/快速创建项目
 
 ![1-34](./images/1-34.png)
 
@@ -667,7 +667,7 @@ public class HelloController {
 
 以上，就是我们 Spring Boot 快速入门的全部内容，更多详细内容请查看源代码了解。
 
-### 源代码：
+## 源代码：
 
 [SpringBoot-In-Action](https://github.com/Runewbie/SpringBoot-In-Action)
 
@@ -675,27 +675,325 @@ public class HelloController {
 
 - [spring-boot-01-helloworld-quick](https://github.com/Runewbie/SpringBoot-In-Action/tree/master/spring-boot-01-helloworld-quick)
 
-## 二、Spring Boot配置
+# 二、Spring Boot配置
+
+这一章节的主要内容是 Spring Boot 的配置，包括配置文件、加载顺序和配置原理。
+
+## 1、配置文件
+
+### `类型`：
+
+Spring Boot 使用一个全局的配置文件，配置文件名是固定的，Spring Boot 中存在两种类型的配置文件：
+
+- `application.properties`
+
+- `application.yml` 
+
+### `作用`：
+
+修改 Spring Boot 自动配置的默认值；Spring Boot在底层都给我们自动配置好。
+
+### `位置`：
+
+配置文件放在 `src/main/resources` 目录或者 `类路径/config` 下。
+
+YAML（YAML Ain't Markup Language）：递归写法
+
+​	YAML  A Markup Language：是一个标记语言
+
+​	YAML   isn't Markup Language：不是一个标记语言；
+
+标记语言：
+
+​	以前的配置文件；大多都使用的是  **xxx.xml**文件；
+
+​	YAML：**以数据为中心**，比json、xml等更适合做配置文件；
+
+​	YAML：配置例子
+
+了解更多 yml 内容，可以参考[官方文档语法规范](https://yaml.org/)
+
+新建一个 `spring-boot-02-config` 的 `Spring Boot`项目，同时选上 web 和 lombok 依赖。
+
+![2-1](./images/2-1.png)
+
+可以看到我们新建的项目默认使用的是 `application.properties` 作为配置文件。
+
+我们可以在 `resources` 目录下再新建一个 `application.yml` 文件。
+
+我们在 yml 文件中配置一下项目启动的端口号：
+
+```yml
+server:
+  port: 8088
+```
+
+启动后我们可以看到我的项目是在 `8088` 端口启动的：
+
+![8088](./images/2-2.png)
+
+如果是以前基于 Spring 的 Web 项目，则需要在 web.xml 文件中做如下配置：
+
+```xml
+<server>
+	<port>8081</port>
+</server>
+```
+
+可以看到使用 yml 语法比之前的 xml 文件简洁很多。
+
+## 2、YAML语法
+
+### 1、基本语法
+
+- 使用缩进表示层级关系
+- 缩进时不允许使用`Tab`键，只允许使用`空格`
+- 缩进的空格数据不限，只要相同层级的元素左侧对齐即可
+- 属性大小写敏感
+
+简要概括就是：k:(空格)v：表示一对键值对（空格必须有）；以**空格**的缩进来控制层级关系；只要是左对齐的一列数据，都是同一个层级的；属性和值也是`大小写敏感`；
+
+```yaml
+server:
+    port: 8088
+    path: /hello
+```
+
+### 2、值的写法
+
+- 对象：键值对的集合
+- 数组：一组按次序排列的值
+- 字面量：单个的、不可再分的值
+
+#### 字面量：普通的值（数字，字符串，布尔）
+
+`k: v`：字面直接来写；`（注意键值对之间有空格）`
+
+字符串默认不用加上单引号或者双引号；
+
+`""`：双引号；不会转义字符串里面的特殊字符；特殊字符会作为本身想表示的意思
+
+>  name:   "zhangsan \n lisi"：输出；zhangsan 换行  lisi
+
+`''`：单引号；会转义特殊字符，特殊字符最终只是一个普通的字符串数据
+
+> name:   ‘zhangsan \n lisi’：输出；zhangsan \n  lisi
+
+#### 对象、Map（属性和值）（键值对）：
+
+`k: v`：在下一行来写对象的属性和值的关系；注意缩进
+
+对象还是`k: v`的方式
+
+```yaml
+friends:
+		lastName: zhangsan
+		age: 20
+```
+
+行内写法：对象的`k: v`写法还可以转换成行内写法
+
+```yaml
+friends: {lastName: zhangsan,age: 18}
+```
+
+#### 数组（List、Set）：
+
+用`- 值`（短横线、空格 、值）表示数组中的一个元素
+
+```yaml
+pets:
+ - cat
+ - dog
+ - pig
+```
+
+行内写法：数组也可以使用行内写法
+
+```yaml
+pets: [cat,dog,pig]
+```
+
+## 3、配置文件值注入
+
+前面第2节讲完 yml 的语法，下面我们来实战一下。在 `src\main\java\com\demo\springboot\bean` 包下新建如下类：
+
+```java
+/**
+ * 将配置文件中配置的每一个属性的值，映射到这个组件中
+ * @ConfigurationProperties：告诉SpringBoot将本类中的所有属性和配置文件中相关的配置进行绑定；
+ *      prefix = "person"：配置文件中哪个下面的所有属性进行一一映射
+ *
+ * 只有这个组件是容器中的组件，才能容器提供的@ConfigurationProperties功能；
+ *
+ */
+@Data // 使用lombok注解
+@ToString // 使用lombok注解
+@Component // 只有这个组件是容器中的组件，才能容器提供的@ConfigurationProperties功能
+@ConfigurationProperties(prefix = "person")
+public class Person {
+    private String lastName;
+    private Integer age;
+    private Boolean boss;
+    private Date birth;
+    private Map<String,Object> maps;
+    private List<Object> lists;
+    private Dog dog;
+}
+```
+
+```java
+@Data
+@ToString
+public class Dog {
+    private String name;
+    private Integer age;
+}
+```
+
+然后在`application.yml`配置文件中添加下面内容：
+
+```yml
+# 配置 Person 和 Dog 的值
+person:
+  lastName: lisi # lastName === last-name 两个效果是一样的
+  age: 20
+  boss: false
+  birth: 1988/01/02
+  maps: {k1: v1,k2: 12}
+  lists:
+    - zhangsan
+    - lisi
+  dog:
+    name: 阿黄
+    age: 2
+```
+
+`注意：`我们写好配置文件后，还需要将配置文件和对应的类进行映射，我们使用 `@ConfigurationProperties(prefix = "person")` 注解来将配置文件和当前组件进行映射；因为使用`@ConfigurationProperties`的前提是这个类必须是容器中的组件，所以我们还需要使用`@Component`来注解我们的类。
+
+做完上面的步骤后我们会发现在idea中出现了如下提示：
+
+![8088](./images/2-3.png)
+
+提示我们没有在类路径下找到SpringBoot配置注解处理器，之前我们在yml文件中进行配置的时候也发现了我们自己定义的类，并没有自动提示。关于这一点，Spring Boot 也替我们考虑到了，我们点击上边的提示，可以打开Spring Boot的[文档](https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/html/configuration-metadata.html#configuration-metadata-annotation-processor)：
+
+> ## B.3 Generating Your Own Metadata by Using the Annotation Processor
+>
+> You can easily generate your own configuration metadata file from items annotated with `@ConfigurationProperties` by using the `spring-boot-configuration-processor` jar. The jar includes a Java annotation processor which is invoked as your project is compiled. To use the processor, include a dependency on `spring-boot-configuration-processor`.
+>
+> With Maven the dependency should be declared as optional, as shown in the following example:
+>
+> ```xml
+> <dependency>
+> 	<groupId>org.springframework.boot</groupId>
+> 	<artifactId>spring-boot-configuration-processor</artifactId>
+> 	<optional>true</optional>
+> </dependency>
+> ```
+
+文档中提示我们需要在`pom`中引入下面的依赖：
+
+```xml
+<!--导入配置文件处理器，配置文件进行绑定就会有提示-->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-configuration-processor</artifactId>
+    <optional>true</optional>
+</dependency>
+```
+
+引入依赖后可以看到我们的 `Person` 类中出现了重新运行程序的提示：
+
+![8088](./images/2-4.png)
+
+我们重启项目后，再次在`application.yml`文件中配置时就可以看到出现了自动提示信息：
+
+![8088](./images/2-5.png)
+
+完成上面的操作后我们来测试一下，在测试类中输出一下`Person`类的值，测试类`SpringBoot02ConfigApplicationTests`中加入如下代码：
+
+```java
+@Autowired
+private Person person;
+@Test
+void contextLoads() {
+    System.out.println(person);
+}
+```
+
+执行测试用例方法，可以看到下面的结果：
+
+![2-6](./images/2-6.png)
+
+同样的，我们除了在 `application.yml` 中配置类的属性值外，也可以在 `application.properties` 文件中配置，我们注释掉 `application.yml` 中的内容，然后在 `application.properties` 配置如下内容：
+
+```properties
+server.port=8888
+
+# 配置 Person 和 Dog 的值
+person.last-name=李四
+person.age=18
+person.boss=false
+person.birth=1988/01/02
+person.maps.k1=1
+person.maps..k2=2
+person.lists=a,b,c
+person.dog.name=阿黄
+person.dog.age=2
+```
+
+同样的执行我们的测试方法，可以看到测试通过：
+
+![2-6](./images/2-7.png)
+
+值得注意的是，使用 `application.properties` 配置后我们看到输出的`lastname`和`name`是乱码！这个就是我们下面要讲的内容
+
+#### 1、properties配置文件在idea中默认utf-8可能会乱码
+
+因为我们的`idea`默认使用的是`utf-8`编码，但是`application.properties` 使用的是`ASCII` 码，所以我们需要在idea中设置一下：
+
+![2-6](./images/2-8.png)
+
+配置好后重新执行测试用例可以看到输出结果正常。
+
+![2-9](./images/2-9.png)
 
 
 
 
 
-## 三、Spring Boot与日志
 
-## 四、Spring Boot与Web开发
-## 五、Spring Boot与Docker
-## 六、Spring Boot自定义配置原理
-## 七、Spring Boot启动配置原理
-## 八、Spring Boot自定义Staters
-## 九、Spring Boot与缓存
-## 十、Spring Boot与消息
-## 十一、Spring Boot与检索
-## 十二、Spring Boot与任务
-## 十三、Spring Boot与安全
-## 十四、Spring Boot 与分布式
-## 十五、Spring Boot 与开发热部署
-## 十六、Spring Boot与监控管理
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 三、Spring Boot与日志
+
+# 四、Spring Boot与Web开发
+# 五、Spring Boot与Docker
+
+# 六、Spring Boot自定义配置原理
+# 七、Spring Boot启动配置原理
+# 八、Spring Boot自定义Staters
+# 九、Spring Boot与缓存
+# 十、Spring Boot与消息
+# 十一、Spring Boot与检索
+# 十二、Spring Boot与任务
+# 十三、Spring Boot与安全
+# 十四、Spring Boot 与分布式
+# 十五、Spring Boot 与开发热部署
+# 十六、Spring Boot与监控管理
 
 
 

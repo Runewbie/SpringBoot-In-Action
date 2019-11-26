@@ -8,6 +8,7 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-01-helloworld-quick/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-02-config/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

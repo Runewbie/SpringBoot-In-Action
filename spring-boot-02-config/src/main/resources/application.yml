@@ -1,0 +1,18 @@
+#server:
+#  port: 8088
+
+
+
+## 配置 Person 和 Dog 的值
+#person:
+#  lastName: lisi # last-name == lastName 二者效果一样
+#  age: 20
+#  boss: false
+#  birth: 1988/01/02
+#  maps: {k1: v1,k2: 12}
+#  lists:
+#    - zhangsan
+#    - lisi
+#  dog:
+#    name: 阿黄
+#    age: 2

@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/demo" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/demo" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/demo" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/demo" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/demo" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/demo" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/demo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot-01-helloworld" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot-01-helloworld-quick" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/xxx" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-02-config" charset="UTF-8" />
   </component>
 </project>

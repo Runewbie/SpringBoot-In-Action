@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="spring-boot-02-config" />
         <module name="spring-boot-01-helloworld" />
         <module name="spring-boot-01-helloworld-quick" />
       </profile>
@@ -15,6 +16,7 @@
       <module name="demo" target="1.8" />
       <module name="spring-boot-01-helloworld" target="1.8" />
       <module name="spring-boot-01-helloworld-quick" target="1.8" />
+      <module name="spring-boot-02-config" target="1.8" />
       <module name="SpringBoot-In-Action" target="1.8" />
       <module name="xxx" target="1.8" />
     </bytecodeTargetLevel>
@@ -24,6 +26,7 @@
       <module name="demo" options="-parameters" />
       <module name="spring-boot-01-helloworld" options="-parameters" />
       <module name="spring-boot-01-helloworld-quick" options="-parameters" />
+      <module name="spring-boot-02-config" options="-parameters" />
       <module name="xxx" options="-parameters" />
     </option>
   </component>
