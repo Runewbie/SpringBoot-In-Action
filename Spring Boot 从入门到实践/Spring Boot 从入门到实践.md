@@ -948,7 +948,7 @@ person.dog.age=2
 
 值得注意的是，使用 `application.properties` 配置后我们看到输出的`lastname`和`name`是乱码！这个就是我们下面要讲的内容
 
-#### 1、properties配置文件在idea中默认utf-8可能会乱码
+### 1、properties配置文件在idea中默认utf-8可能会乱码
 
 因为我们的`idea`默认使用的是`utf-8`编码，但是`application.properties` 使用的是`ASCII` 码，所以我们需要在idea中设置一下：
 
@@ -958,23 +958,119 @@ person.dog.age=2
 
 ![2-9](./images/2-9.png)
 
+### 2、@Value获取值和@ConfigurationProperties获取值比较
 
+我们除了使用`@ConfigurationProperties`注解来获取值以外，还可以使用`@Value`来获取配置文件中的值
 
+`@Value`的作用和我们在xml文件中使用<bean>标签配置的作用一样：
 
+```xml
+<bean class="Person">
+	<property name="lastName" value="字面量/${key}从环境变量、配置文件中获取值/#{SpEL}"></property>
+<bean/>
+```
 
+所以我们的`@Value`注解中也可以使用`字面量/${key}从环境变量、配置文件中获取值/#{SpEL}`来进行值的获取。
 
+我们修改`Person`类,注意注释掉`@ConfigurationProperties(prefix = "person")`：
 
+```java
+//@ConfigurationProperties(prefix = "person")
+public class Person {
 
+    /**
+     * <bean class="Person">
+     *      <property name="lastName" value="字面量/${key}从环境变量、配置文件中获取值/#{SpEL}"></property>
+     * <bean/>
+     */
+    @Value("${person.last-name}")
+    private String lastName;
+    @Value("#{11*2}")
+    private Integer age;
+    @Value("true")
+    private Boolean boss;
+```
 
+测试运行后可以看到如下效果，可以看到我们配置的属性都获取到了值：
 
+![2-9](./images/2-10.png)
 
+那么`@Value`获取值和`@ConfigurationProperties`获取值有什么不同呢？我们来比较一下：
 
+|                      | @ConfigurationProperties | @Value     |
+| -------------------- | ------------------------ | ---------- |
+| 功能                 | 批量注入配置文件中的属性 | 一个个指定 |
+| 松散绑定（松散语法） | 支持                     | 不支持     |
+| SpEL                 | 不支持                   | 支持       |
+| JSR303数据校验       | 支持                     | 不支持     |
+| 复杂类型封装         | 支持                     | 不支持     |
 
+属性名匹配规则：（Relaxed binding 松散绑定）
 
+- person.lastName：标准写法方式
 
+- person.last-name：大写用`-`（中划线）
+- person.last_name：大写用`_`（下划线）
+- PERSON_LAST_NAME：推荐系统属性使用这个写法
 
+JSR303数据校验：
 
+要使用JSR303数据校验可以在在代码中引入`@Validated`和其相关注解。修改`Person`类：
 
+```java
+@ConfigurationProperties(prefix = "person")
+@Validated
+public class Person {
+    @Email //lastName必须是邮箱格式
+    private String lastName;
+```
+
+执行测试用例会出现报错，因为我们的用户名要求为邮箱格式：
+
+![2-9](./images/2-11.png)`注意`：要使用`JSR303`数据校验，在注入值的时候必须是使用`@ConfigurationProperties`注解来进行注入，使用`@Value`无效。
+
+`总结：`
+
+- 无论配置文件`yml`还是`properties`它们都能获取到值；
+
+- 如果我们只是在某个业务逻辑中需要获取一下配置文件中的某项值，使用`@Value`；
+
+- 如果我们专门编写了一个javaBean来和配置文件进行映射，我们就直接使用`@ConfigurationProperties`,
+
+### 3、配置文件注入值数据校验
+
+```java
+@Data
+@ToString
+@Component // 只有这个组件是容器中的组件，才能容器提供的@ConfigurationProperties功能
+@ConfigurationProperties(prefix = "person")
+@Validated
+public class Person {
+    /**
+     * <bean class="Person">
+     *      <property name="lastName" value="字面量/${key}从环境变量、配置文件中获取值/#{SpEL}"></property>
+     * <bean/>
+     */
+//    @Value("${person.last-name}")
+    @Email //lastName必须是邮箱格式
+    private String lastName;
+//    @Value("#{11*2}")
+    private Integer age;
+//    @Value("true")
+    private Boolean boss;
+    private Date birth;
+    private Map<String,Object> maps;
+    private List<Object> lists;
+    private Dog dog;
+}
+```
+
+### 4、@PropertySource&@ImportResource&@Bean
+
+`@ConfigurationProperties`：
+
+- 与`@Bean`结合为属性赋值
+- 与`@PropertySource`（只适用于`properties`文件）结合读取指定文件
 
 
 
